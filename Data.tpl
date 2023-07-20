@@ -22,7 +22,6 @@ Example
 Example
 Example
 $myip
-dmytro.futumaichuk.knm.2019@lpnu.uaconf$myip" | 
 sudo touch /etc/apache2/sites-available/$myip.conf
 echo "<VirtualHost *:443>
    ServerName $myip
