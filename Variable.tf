@@ -26,34 +26,37 @@ variable "CIDR" {
 }
 
 variable "min_size" {
+  type    = number
   default = 1
 }
 
 variable "max_size" {
+  type    = number
   default = 3
 }
 
 variable "desired_capacity" {
+  type    = number
   default = 1
 }
 
 
 variable "scheduled_desired_capacity" {
   description = "Desired/Default size of scheduled instances"
-  type        = list(any)
-  default     = ["1", "3"]
+  type        = list(number)
+  default     = [2, 3]
 }
 
 variable "scheduled_min_size" {
   description = "Min size of scheduled instances"
-  type        = list(any)
-  default     = ["1", "3"]
+  type        = list(number)
+  default     = [2, 3]
 }
 
 variable "scheduled_max_size" {
   description = "Max size of scheduled instances"
-  type        = list(any)
-  default     = ["1", "3"]
+  type        = list(number)
+  default     = [3, 5]
 }
 
 
@@ -67,13 +70,20 @@ variable "zone2" {
 
 }
 
-variable "compare" {
+variable "compare" {    
   default = "GreaterThanThreshold"
 }
 
 variable "thread" {
+  type=number
   default = "70"
 }
+
+variable "thread_less" {
+  type=number
+  default = "30"
+}
+
 
 variable "main_vpc_cidr" {}
 variable "private_subnets" {}

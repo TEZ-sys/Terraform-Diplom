@@ -78,16 +78,17 @@ resource "aws_autoscaling_schedule" "diplom_asg_schedule" {
   min_size               = var.scheduled_min_size[0]
   max_size               = var.scheduled_max_size[0]
   desired_capacity       = var.scheduled_desired_capacity[0]
-  recurrence             = "0 9 * * 1-5"
+  recurrence             = "15 19 * * 1-5"
   autoscaling_group_name = aws_autoscaling_group.diplom_asg.name
 }
 
 
 resource "aws_autoscaling_schedule" "diplom_asg2_schedule" {
   scheduled_action_name  = "Scheduled Frankfurd"
+  provider               = aws.reg_FF
   min_size               = var.scheduled_min_size[1]
   max_size               = var.scheduled_max_size[1]
   desired_capacity       = var.scheduled_desired_capacity[1]
   recurrence             = "0 18 * * 0-6"
-  autoscaling_group_name = aws_autoscaling_group.diplom_asg.name
+  autoscaling_group_name = aws_autoscaling_group.diplom_asg2.name
 }
