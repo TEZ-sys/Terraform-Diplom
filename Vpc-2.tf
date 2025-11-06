@@ -5,7 +5,7 @@ resource "aws_security_group" "sg_elb_FF" {
   description = "Security-Group for ELB security group"
   vpc_id      = aws_vpc.vpc2.id
 
-   dynamic "ingress" {
+  dynamic "ingress" {
     for_each = var.ports
     content {
       from_port   = ingress.value
@@ -14,13 +14,13 @@ resource "aws_security_group" "sg_elb_FF" {
       cidr_blocks = var.CIDR
     }
   }
-    egress {
+  egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = var.CIDR
   }
-  
+
   tags = {
     Name = "example_elb"
   }

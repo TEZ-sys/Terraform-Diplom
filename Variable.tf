@@ -26,12 +26,36 @@ variable "CIDR" {
 }
 
 variable "min_size" {
-  default = 2
+  default = 1
 }
 
 variable "max_size" {
-  default = 4
+  default = 3
 }
+
+variable "desired_capacity" {
+  default = 1
+}
+
+
+variable "scheduled_desired_capacity" {
+  description = "Desired/Default size of scheduled instances"
+  type        = list(any)
+  default     = ["1", "3"]
+}
+
+variable "scheduled_min_size" {
+  description = "Min size of scheduled instances"
+  type        = list(any)
+  default     = ["1", "3"]
+}
+
+variable "scheduled_max_size" {
+  description = "Max size of scheduled instances"
+  type        = list(any)
+  default     = ["1", "3"]
+}
+
 
 variable "zone" {
   default = ["eu-west-2a", "eu-west-2b", "eu-west-2c", ]
