@@ -44,19 +44,19 @@ variable "desired_capacity" {
 variable "scheduled_desired_capacity" {
   description = "Desired/Default size of scheduled instances"
   type        = list(number)
-  default     = [2, 3]
+  default     = [2, 1]
 }
 
 variable "scheduled_min_size" {
   description = "Min size of scheduled instances"
   type        = list(number)
-  default     = [2, 3]
+  default     = [2, 1]
 }
 
 variable "scheduled_max_size" {
   description = "Max size of scheduled instances"
   type        = list(number)
-  default     = [3, 5]
+  default     = [3, 2]
 }
 
 
